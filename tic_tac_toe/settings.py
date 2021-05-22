@@ -60,6 +60,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'tic_tac_toe.wsgi.application'
 
+ASGI_APPLICATION = "tic_tac_toe.asgi.application"
+
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -113,3 +115,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,"static")
 ]
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
+}
+#use resid-server later
